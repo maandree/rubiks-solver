@@ -1,5 +1,39 @@
 ![](pics/png/solved-state.png)
 
+# Usage
+
+## Synopsis
+
+```
+hexstar-prism [-e | -n] [-R | configuration]
+```
+
+## Description
+
+configuration shall be one argument per layer,
+the top layer first, the bottom layer last.
+Each argument shall consists of 6 characters,
+each representing a colour. Holding the puzzle
+as in the image above, the first character, in
+each argument of configuration, represents the
+column coloured yellow in the image above, the
+second characters represents the green column,
+and so on.
+
+## Options
+
+# -e
+
+In the initial state, the centre circle is solved.
+
+# -n
+
+In the initial state, the centre circle is not solved.
+
+# -R
+
+Randomise the initial state
+
 # Notation
 
 ## Columns
