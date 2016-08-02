@@ -185,7 +185,7 @@ Assuming 2 layers.
 
 ⤸₁³ → ⤸₁² → ⤸₁³
 
-Solves ⟨↘₁ →₁ ↗₁ | ↘₂ →₂ ↗₂⟩ = ⟨2 3 3 | 1 1 2⟩,
+Solves ⟨↘₁ →₁ ↗₁ | ↘₂ →₂ ↗₂⟩ = ⟨2 3 3 | 1 1 2⟩.
 
 Assuming 2 layers.
 
@@ -193,7 +193,7 @@ Assuming 2 layers.
 
 ⤸₁¹ ↗ → ⤸₁¹ → ↘ → ⤸₁²
 
-Solves ⟨↘₁ →₁ ↗₁ | ↘₂ →₂ ↗₂⟩ = ⟨1 2 3 | 3 1 2⟩,
+Solves ⟨↘₁ →₁ ↗₁ | ↘₂ →₂ ↗₂⟩ = ⟨1 2 3 | 3 1 2⟩.
 
 Assuming 2 layers.
 
@@ -201,7 +201,7 @@ Assuming 2 layers.
 
 ⤸₁¹ ↗ ⤸₁² → ↗ ↘ ↗ ⤸₁³
 
-Solves ⟨↘₁ →₁ ↗₁ | ↘₂ →₂ ↗₂⟩ = ⟨1 2 3 | 3 2 1⟩,
+Solves ⟨↘₁ →₁ ↗₁ | ↘₂ →₂ ↗₂⟩ = ⟨1 2 3 | 3 2 1⟩.
 
 Assuming 2 layers.
 
@@ -209,7 +209,7 @@ Assuming 2 layers.
 
 ⤸₁¹ → ↗ ↘ ↗ ⤸₁¹
 
-Solves ⟨↘₁ →₁ ↗₁ | ↘₂ →₂ ↗₂⟩ = ⟨1 1 2 | 2 3 3⟩,
+Solves ⟨↘₁ →₁ ↗₁ | ↘₂ →₂ ↗₂⟩ = ⟨1 1 2 | 2 3 3⟩.
 
 Assuming 2 layers.
 
@@ -217,7 +217,7 @@ Assuming 2 layers.
 
 ↗ ↘ ⤸₁¹ → ⤹₁¹ ←
 
-Solves ⟨↘₁ →₁ ↗₁ | ↘₂ →₂ ↗₂⟩ = ⟨1 1 2 | 3 3 2⟩,
+Solves ⟨↘₁ →₁ ↗₁ | ↘₂ →₂ ↗₂⟩ = ⟨1 1 2 | 3 3 2⟩.
 
 Assuming 2 layers.
 
@@ -225,7 +225,7 @@ Assuming 2 layers.
 
 ↗ ⤸₁¹ ↗ ⤸₁² → ↗ ↘ ↗ ⤸₁³ ↘ ←
 
-Solves ⟨↘₁ →₁ ↗₁ | ↘₂ →₂ ↗₂⟩ = ⟨1 3 1 | 2 3 2⟩,
+Solves ⟨↘₁ →₁ ↗₁ | ↘₂ →₂ ↗₂⟩ = ⟨1 3 1 | 2 3 2⟩.
 
 Assuming 2 layers.
 
@@ -233,7 +233,7 @@ Assuming 2 layers.
 
 ↗ ⤸₁¹ ↘ → ⤸₁² → ↘ ⤸₁¹
 
-Solves ⟨↘₁ →₁ ↗₁ | ↘₂ →₂ ↗₂⟩ = ⟨2 1 1 | 3 2 3⟩,
+Solves ⟨↘₁ →₁ ↗₁ | ↘₂ →₂ ↗₂⟩ = ⟨2 1 1 | 3 2 3⟩.
 
 Assuming 2 layers.
 
@@ -241,6 +241,6 @@ Assuming 2 layers.
 
 ⤸₁² ↗ ↘ → ⤸₁¹ ↘ ↗ ⤹₁²
 
-Solves ⟨↘₁ →₁ ↗₁ | ↘₂ →₂ ↗₂⟩ = ⟨2 2 1 | 3 1 3⟩,
+Solves ⟨↘₁ →₁ ↗₁ | ↘₂ →₂ ↗₂⟩ = ⟨2 2 1 | 3 1 3⟩.
 
 Assuming 2 layers.
