@@ -5,7 +5,7 @@
 ## Synopsis
 
 ```
-hexstar-prism [-e | -n] [-R | configuration]
+hexagon-prism [-e | -n] [-R | configuration]
 ```
 
 ## Description
