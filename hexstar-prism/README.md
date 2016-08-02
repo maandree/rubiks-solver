@@ -22,15 +22,15 @@ and so on.
 
 ## Options
 
-# -e
+### -e
 
 In the initial state, the centre circle is solved.
 
-# -n
+### -n
 
 In the initial state, the centre circle is not solved.
 
-# -R
+### -R
 
 Randomise the initial state
 
