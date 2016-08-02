@@ -1,1 +1,1 @@
-![](solved-state-svg)
+![](pics/solved-state-svg)
