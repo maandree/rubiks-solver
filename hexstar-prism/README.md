@@ -64,11 +64,11 @@
 
 # Additional notation
 
-* [↑], [↓], and [↕] conbines ← and →.
+* [↑], [↓], and [↕] combines ← and →.
 
-* [↖] and [↘] conbines ↗ and ↙.
+* [↖] and [↘] combines ↗ and ↙.
 
-* [↗] and [↙] conbines ↖ and ↘.
+* [↗] and [↙] combines ↖ and ↘.
 
 * [⤸¹] rotates the whole cube 60° clockwise.
 
