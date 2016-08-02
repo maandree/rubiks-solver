@@ -107,16 +107,16 @@ class State:
                 elif c == '[⤸]':
                     for L in self.layers:
                         L[:] = [L[5]] + L[0:5]
-                elif c == '[←]' or c == '[→]':
-                    strc = '[→]'
+                elif c == '[↑]'  or c == '[↓]' or c == '[↕]':
+                    strc = '[↑]'
                     self.__permute(1)
                     self.__permute(4)
-                elif c == '[↗]' or c == '[↙]':
-                    strc = '[↗]'
+                elif c == '[↖]' or c == '[↘]':
+                    strc = '[↖]'
                     self.__permute(0)
                     self.__permute(3)
-                elif c == '[↘]' or c == '[↖]':
-                    strc = '[↘]'
+                elif c == '[↗]' or c == '[↙]':
+                    strc = '[↗]'
                     self.__permute(2)
                     self.__permute(5)
                 else:
@@ -530,7 +530,7 @@ while old_moves != moves:
     while '\n\n' in moves:
         moves = moves.replace('\n\n', '\n')
     for s in ('\n', ' ', ''):
-        for c in ('↗', '→', '↘', '↙', '←', '↖'):
+        for c in ('↗', '→', '↘', '↙', '←', '↖', '↑', '↓', '↕', '↔'):
             moves = moves.replace(c + s + c, s)
             moves = moves.replace('[' + c + ']' + s + '[' + c + ']', s)
 for i in range(len(state.layers)):
