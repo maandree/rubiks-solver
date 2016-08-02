@@ -135,3 +135,38 @@ is the centre layer and a is all layers above it.
 
 If the centre circle is not solved, perform one
 flip. That is, either ↗, →, ↘, ↙, ←, or ↖.
+
+# Algorithms
+
+i is any layer, j is i's opposite layer.
+
+(⋆) means columns are reordered, possibly
+with upside-down flipping.
+
+## (→ᵢ ↔ ↘ᵢ)(←ᵢ ↔ ←ⱼ)
+
+⤸ⱼ² ↘ ⤸ⱼ¹ ↘ ⤸ⱼ¹ ↗ ⤸ᵢ¹ ↗ ⤸ⱼ³
+
+## (→ᵢ ↔ ↘ⱼ)(→ⱼ ↔ ↘ᵢ)(⋆)
+
+↗ ⤸ᵢ¹ → ⤸ⱼ ↗ → ↘ ↗ ⤸ᵢ¹ → ⤸ⱼ
+
+## (↗₂ ↔ ↘₂) {Assuming 3 layers}
+
+⤸₁³ → ⤸₁³ → ⤸₁³ →
+
+## (→₁ ↔ ←₁)(⋆) {Assuming 2 layers}
+
+→ ⤸₁¹ ↗ ⤹₁¹
+
+## (↗₁ ↔ →₂)(↗₂ ↔ →₁)(↙₁ ↔ ←₂)(↙₂ ↔ ←₁) {Assuming 2 layers}
+
+⤸₁¹ → ⤸₁² ↙ ⤹₁¹
+
+## (↗₁ ↔ ↙₂)(↗₂ ↔ ↙₁) {Assuming 2 layers}
+
+⤸₁¹ → ⤸₁² ↙ ⤹₁¹
+
+## (↗₁ → ↖₁ → ↘₂ → ↙₂ → →₁ → …)(↗₂ → ↖₂ → ↘₁ → ↙₁ → →₂ → …) {Assuming 2 layers}
+
+↗ ↘ ⤸₁¹ ↗ ⤹₁² ↘ ⤸₁¹
