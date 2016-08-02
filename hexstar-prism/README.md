@@ -151,22 +151,32 @@ with upside-down flipping.
 
 ↗ ⤸ᵢ¹ → ⤸ⱼ ↗ → ↘ ↗ ⤸ᵢ¹ → ⤸ⱼ
 
-## (↗₂ ↔ ↘₂) {Assuming 3 layers}
+## (↗₂ ↔ ↘₂)
 
 ⤸₁³ → ⤸₁³ → ⤸₁³ →
 
-## (→₁ ↔ ←₁)(⋆) {Assuming 2 layers}
+Assuming 3 layers.
+
+## (→₁ ↔ ←₁)(⋆)
 
 → ⤸₁¹ ↗ ⤹₁¹
 
-## (↗₁ ↔ →₂)(↗₂ ↔ →₁)(↙₁ ↔ ←₂)(↙₂ ↔ ←₁) {Assuming 2 layers}
+Assuming 2 layers.
+
+## (↗₁ ↔ →₂)(↗₂ ↔ →₁)(↙₁ ↔ ←₂)(↙₂ ↔ ←₁)
 
 ⤸₁¹ → ⤸₁² ↙ ⤹₁¹
 
-## (↗₁ ↔ ↙₂)(↗₂ ↔ ↙₁) {Assuming 2 layers}
+Assuming 2 layers.
+
+## (↗₁ ↔ ↙₂)(↗₂ ↔ ↙₁)
 
 ⤸₁¹ → ⤸₁² ↙ ⤹₁¹
 
-## (↗₁ → ↖₁ → ↘₂ → ↙₂ → →₁ → …)(↗₂ → ↖₂ → ↘₁ → ↙₁ → →₂ → …) {Assuming 2 layers}
+Assuming 2 layers.
+
+## (↗₁ → ↖₁ → ↘₂ → ↙₂ → →₁ → …)(↗₂ → ↖₂ → ↘₁ → ↙₁ → →₂ → …)
 
 ↗ ↘ ⤸₁¹ ↗ ⤹₁² ↘ ⤸₁¹
+
+Assuming 2 layers.
