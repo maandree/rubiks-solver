@@ -1,0 +1,1 @@
+![](solved-state-svg)
