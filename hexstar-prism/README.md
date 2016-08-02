@@ -83,7 +83,7 @@
 # Solving the puzzle
 
 This puzzle is one of the most difficult variants
-of the rubik's cube. Despite this, it has 120
+of the rubik's cube. Despite this, it has 60
 solved states, only one algorithm is necessary to
 solve the puzzle, half of the puzzle can be solved
 almost trivially, and with not much more thought
