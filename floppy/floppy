@@ -1,0 +1,163 @@
+#!/usr/bin/env python3
+
+# ISC License
+# 
+# © 2016 Mattias Andrée <maandree@kth.se>
+# 
+# Permission to use, copy, modify, and/or distribute this software for any
+# purpose with or without fee is hereby granted, provided that the above
+# copyright notice and this permission notice appear in all copies.
+# 
+# THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+# WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+# ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+# WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+# ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+# OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+import sys, os
+
+argv0 = sys.argv[0]
+
+class Piece:
+    def __init__(self, up = None, left = None, front = None, right = None, back = None, down = None):
+        if up is not None and isinstance(up, Piece):
+            self.up    = up.up
+            self.left  = up.left
+            self.front = up.front
+            self.right = up.right
+            self.back  = up.back
+            self.down  = up.down
+        else:
+            self.up    = up
+            self.left  = left
+            self.front = front
+            self.right = right
+            self.back  = back
+            self.down  = down
+
+    def __getitem__(self, i):
+        if i == 0:
+            return self.up
+        if i == 1:
+            return self.down
+        if i == 2:
+            return self.left
+        if i == 3:
+            return self.right
+        if i == 4:
+            return self.front
+        if i == 5:
+            return self.back
+        os.abort()
+
+    def __setitem__(self, i, v):
+        if i == 0:
+            self.up = v
+        elif i == 1:
+            self.down = v
+        elif i == 2:
+            self.left = v
+        elif i == 3:
+            self.right = v
+        elif i == 4:
+            self.front = v
+        elif i == 5:
+            self.back = v
+        else:
+            os.abort()
+
+class State:
+    def __init__(self, n, top = None, bottom = None, edge = None):
+        if isinstance(n, State):
+            self.n = n.n
+            self.rows = [[Piece(cell) for cell in row] for row in n.rows]
+            self.ref = n.ref
+            return
+        self.n = n
+        self.rows = [[Piece(up = top[y][x], down = bottom[y][x]) for x in range(n)] for y in range(n)]
+        i = 0
+        for y in range(n):
+            self.rows[y][n - 1].right = edge[i]
+            i += 1
+        for x in reversed(range(n)):
+            self.rows[n - 1][x].front = edge[i]
+            i += 1
+        for y in reversed(range(n)):
+            self.rows[y][0].left = edge[i]
+            i += 1
+        for x in range(n):
+            self.rows[0][x].back = edge[i]
+            i += 1
+        opposites = {}
+        for y in range(n):
+            for x in range(n):
+                for i in range(6):
+                    a = self.rows[y][x][i]
+                    b = self.rows[y][x][i ^ 1]
+                    if a not in opposites:
+                        opposites[a] = b
+                    elif opposites[a] != b:
+                        print('%s: Invalid initial state' % argv0)
+                        sys.exit(2)
+        for i in range(n):
+            a = self.rows[0][i].back
+            if a not in opposites:
+                b = self.rows[n - 1][i].back
+                if a == b:
+                    self.rows[n - 1][n - 1 - i].back
+                if b in opposites:
+                    print('%s: Invalid initial state' % argv0)
+                    sys.exit(2)
+                opposites[a] = b
+                opposites[b] = a
+        for i in range(n):
+            if self.rows[n - 1][i].front not in opposites:
+                print('%s: Invalid initial state' % argv0)
+                sys.exit(2)
+        for i in range(n):
+            a = self.rows[i][0].left
+            if a not in opposites:
+                b = self.rows[i][n - 1].right
+                if a == b:
+                    self.rows[n - 1 - i][n - 1].right
+                if b in opposites:
+                    print('%s: Invalid initial state' % argv0)
+                    sys.exit(2)
+                opposites[a] = b
+                opposites[b] = a
+        for i in range(n):
+            if self.rows[n - 1][i].right not in opposites:
+                print('%s: Invalid initial state' % argv0)
+                sys.exit(2)
+        self.ref = Piece(self.rows[n // 2][n // 2])
+        self.ref.left = self.rows[n // 2][0].left
+        self.ref.right = opposites[self.ref.left]
+        self.ref.back = self.rows[0][n // 2].back
+        self.ref.front = opposites[self.ref.back]
+        for y in range(n):
+            for x in range(n):
+                p = self.rows[y][x]
+                for i in range(6):
+                    if p[i] is None and p[i ^ 1] is not None:
+                        p[i] = opposites[p[i ^ 1]]
+
+    def __getitem__(self, r):
+        return self.rows[r]
+
+    def is_solved(self):
+        up = self[y][x].up
+        left = self[y][0].left
+        back = self[0][x].back
+        for y in range(self.n):
+            for x in range(self.n):
+                if self[y][x].up != up:
+                    return False
+            if self[y][0].left != left:
+                return False
+        for x in range(self.n)
+            if self[0][x].back != back:
+                return False
+        return True
+
